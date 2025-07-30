@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Wedding color palette */
+    --background: 352 30% 98%;
+    --foreground: 342 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 342 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 342 15% 25%;
+
+    --primary: 340 35% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 350 25% 95%;
+    --secondary-foreground: 342 15% 25%;
+
+    --muted: 350 20% 96%;
+    --muted-foreground: 342 8% 50%;
+
+    --accent: 345 30% 92%;
+    --accent-foreground: 342 15% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 345 25% 90%;
+    --input: 345 25% 90%;
+    --ring: 340 35% 70%;
+
+    /* Wedding design tokens */
+    --rose-gold: 25 40% 75%;
+    --blush: 350 40% 90%;
+    --champagne: 45 25% 88%;
+    --sage: 125 15% 75%;
+
+    /* Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--rose-gold)));
+    --gradient-soft: linear-gradient(180deg, hsl(var(--background)), hsl(var(--blush)));
+
+    /* Shadows */
+    --shadow-romantic: 0 10px 30px -10px hsl(var(--primary) / 0.2);
+    --shadow-soft: 0 5px 20px -5px hsl(var(--primary) / 0.1);
+
+    /* Typography */
+    --font-serif: "Playfair Display", serif;
+    --font-script: "Dancing Script", cursive;
+
+    /* Animations */
+    --transition-romantic: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 342 20% 8%;
+    --foreground: 350 25% 95%;
+
+    --card: 342 15% 12%;
+    --card-foreground: 350 25% 95%;
+
+    --popover: 342 15% 12%;
+    --popover-foreground: 350 25% 95%;
+
+    --primary: 340 35% 70%;
+    --primary-foreground: 342 20% 8%;
+
+    --secondary: 342 15% 15%;
+    --secondary-foreground: 350 25% 95%;
+
+    --muted: 342 15% 15%;
+    --muted-foreground: 342 8% 65%;
+
+    --accent: 342 15% 15%;
+    --accent-foreground: 350 25% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 342 15% 15%;
+    --input: 342 15% 15%;
+    --ring: 340 35% 70%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      "Inter",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-script {
+    font-family: var(--font-script);
+  }
+}
+
+@layer components {
+  .romantic-gradient {
+    background: var(--gradient-romantic);
+  }
+
+  .soft-gradient {
+    background: var(--gradient-soft);
+  }
+
+  .romantic-shadow {
+    box-shadow: var(--shadow-romantic);
+  }
+
+  .soft-shadow {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .romantic-transition {
+    transition: var(--transition-romantic);
+  }
+}

@@ -8,17 +8,10 @@ import path from "path";
 export default defineConfig({
   root: "./src",
   envDir: "../",
-  plugins: [
-    react(),
-    eslint(),
-    Pages({
-      pagesDir: [{ dir: "pages", baseRoute: "" }],
-      extensions: ["tsx"],
-    }),
-  ],
+  plugins: [react(), eslint()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   server: {
