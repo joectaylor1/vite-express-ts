@@ -1,28 +1,26 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Calendar, MapPin, Heart, Clock } from 'lucide-react';
-import weddingHero from '@/assets/header-image_estate-history.webp';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, MapPin, Heart, Clock } from "lucide-react";
+import weddingHero from "@/assets/header-image_estate-history.webp";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${weddingHero})` }}
         >
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
-        
+
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="font-script text-6xl md:text-8xl mb-6 animate-fade-in">
-            Joe & Charlie
-          </h1>
+          <h1 className="font-script text-6xl md:text-8xl mb-6 animate-fade-in">Joe & Charlie</h1>
           <p className="font-serif text-xl md:text-2xl mb-8 opacity-90">
-            Together with their families, request the pleasure of your company
+            We would be delighted for you to join us on our wedding day
           </p>
           <div className="space-y-4 mb-8">
             <div className="flex items-center justify-center space-x-2 text-lg">
@@ -57,6 +55,11 @@ const Home = () => {
                 <p className="text-muted-foreground">Saturday, June 13th, 2026</p>
                 <p className="text-muted-foreground">Ceremony at 1:00 PM</p>
                 <p className="text-muted-foreground">Reception to follow</p>
+                <Link to="/timeline">
+                  <Button variant="link" className="mt-2">
+                    View Timeline
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -67,9 +70,6 @@ const Home = () => {
                 <p className="text-muted-foreground">Berekeley Castle</p>
                 <p className="text-muted-foreground">Berkeley</p>
                 <p className="text-muted-foreground">Gloucestershire, GL13 9PJ</p>
-                <Link to="/venue">
-                  <Button variant="link" className="mt-2">View Details</Button>
-                </Link>
               </CardContent>
             </Card>
 
@@ -90,23 +90,22 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Love Story Preview */}
+      {/* Additional Information */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-script text-4xl md:text-5xl text-primary mb-8">
-            Our Love Story
+            Additional Information
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            What started as a chance meeting at a coffee shop has blossomed into a love story 
-            that we can't wait to celebrate with all of you. After three wonderful years together, 
-            we're excited to begin this new chapter as husband and wife.
+            Click on the follwing links for additional information on accomadation, dress code,
+            transportation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/timeline">
-              <Button variant="elegant">View Our Timeline</Button>
-            </Link>
             <Link to="/info">
-              <Button variant="outline">More Information</Button>
+              <Button variant="elegant">More Information</Button>
+            </Link>
+            <Link to="/faq">
+              <Button variant="elegant">FAQs</Button>
             </Link>
           </div>
         </div>

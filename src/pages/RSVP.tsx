@@ -6,15 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
 import { Heart, CheckCircle } from "lucide-react";
 
 const RSVP = () => {
@@ -25,8 +17,7 @@ const RSVP = () => {
     guest_name: "",
     email: "",
     phone: "",
-    attendance_status: "",
-    menu_choice: "",
+    attending: "",
     dietary_requirements: "",
     friday_evening_attendance: false,
     sunday_attendance: false,
@@ -43,7 +34,7 @@ const RSVP = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.guest_name || !formData.attendance_status) {
+    if (!formData.guest_name || !formData.attending) {
       toast({
         title: "Please fill in required fields",
         description: "Name and attendance status are required.",
@@ -55,9 +46,13 @@ const RSVP = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("rsvp_responses").insert([formData]);
-
-      if (error) throw error;
+      const response = await fetch("http://localhost:9001/api/v1/attendance-response", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Unknown error from server");
 
       setIsSubmitted(true);
       toast({
@@ -132,7 +127,7 @@ const RSVP = () => {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email">Email *</Label>
                     <Input
                       id="email"
                       type="email"
@@ -160,8 +155,8 @@ const RSVP = () => {
                 </h3>
 
                 <RadioGroup
-                  value={formData.attendance_status}
-                  onValueChange={(value) => handleInputChange("attendance_status", value)}
+                  value={formData.attending}
+                  onValueChange={(value) => handleInputChange("attending", value)}
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="attending" id="attending" />
@@ -175,28 +170,12 @@ const RSVP = () => {
               </div>
 
               {/* Menu Choice - only show if attending */}
-              {formData.attendance_status === "attending" && (
+              {formData.attending === "attending" && (
                 <>
                   <div className="space-y-4">
                     <h3 className="font-serif text-lg font-semibold text-primary">
                       Dinner Selection
                     </h3>
-
-                    <div>
-                      <Label htmlFor="menu_choice">Menu Choice</Label>
-                      <Select
-                        value={formData.menu_choice}
-                        onValueChange={(value) => handleInputChange("menu_choice", value)}
-                      >
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select your menu option" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="Option 1">Menu Option 1</SelectItem>
-                          <SelectItem value="Option 2">Menu Option 2</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
 
                     <div>
                       <Label htmlFor="dietary_requirements">
