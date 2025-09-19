@@ -11,6 +11,7 @@ import Timeline from "./pages/Timeline";
 import FAQ from "./pages/FAQ";
 import Info from "./pages/Info";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./scrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

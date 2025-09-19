@@ -9,7 +9,7 @@ const Timeline = () => {
     {
       time: "7:00 PM",
       title: "Welcome Party",
-      description: "All are welcome to join us for a meal the evening before the big day. ",
+      description: "All are welcome to join us for a meal the evening before the big day.",
       location: "Kitchen Garden Cafe, Berkeley Castle",
       icon: <MapPin className="h-5 w-5" />,
     },

@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
-import { Heart, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const RSVP = () => {
   const { toast } = useToast();
@@ -97,7 +97,6 @@ const RSVP = () => {
     <div className="min-h-screen py-16 px-4 bg-secondary/20">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
-          <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
           <h1 className="font-script text-5xl text-primary mb-4">RSVP</h1>
           <p className="text-lg text-muted-foreground">Please respond by December 1st, 2025</p>
         </div>

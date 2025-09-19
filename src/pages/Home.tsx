@@ -18,7 +18,9 @@ const Home = () => {
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="font-script text-6xl md:text-8xl mb-6 animate-fade-in">Joe & Charlie</h1>
+          <h1 className="font-bdscript font-bold italic text-9xl md:text-8xl mb-6 animate-fade-in">
+            Joe & Charlie
+          </h1>
           <p className="font-serif text-xl md:text-2xl mb-8 opacity-90">
             We would be delighted for you to join us on our wedding day
           </p>
@@ -101,6 +103,9 @@ const Home = () => {
             transportation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/timeline">
+              <Button variant="elegant">Timeline</Button>
+            </Link>
             <Link to="/info">
               <Button variant="elegant">More Information</Button>
             </Link>

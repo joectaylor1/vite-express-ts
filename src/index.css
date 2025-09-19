@@ -7,6 +7,26 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  @font-face {
+    font-family: "BodoniFLF Regular";
+    font-style: normal;
+    font-weight: normal;
+    src:
+      local("BodoniFLF Regular"),
+      url("/Fonts/BodoniFLF-Roman.woff") format("woff");
+  }
+  @font-face {
+    font-family: "BodoniFLF";
+    src: url("/Fonts/BodoniFLF-Bold.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "BDScript";
+    src: url("/Fonts/BDScript-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+  }
   :root {
     /* Wedding color palette */
     --background: 352 30% 98%;
@@ -53,7 +73,9 @@ All colors MUST be HSL.
 
     /* Typography */
     --font-serif: "Playfair Display", serif;
-    --font-script: "Dancing Script", cursive;
+    --font-script: "BDScript";
+    --font-bdscript: "BDScript";
+    --font-title: "BodoniFLF Regular";
 
     /* Animations */
     --transition-romantic: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -135,7 +157,15 @@ All colors MUST be HSL.
   }
 
   .font-script {
-    font-family: var(--font-script);
+    font-family: var(--font-script2);
+  }
+
+  .font-bdscript {
+    font-family: var(--font-bdscript);
+  }
+
+  .font-title {
+    font-family: var(--font-title);
   }
 }
 

@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Heart, Menu, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -11,12 +11,11 @@ const Navigation = () => {
   const isActive = (path: string) => location.pathname === path;
 
   const navItems = [
-    { name: 'Home', path: '/' },
-    { name: 'RSVP', path: '/rsvp' },
-    { name: 'Venue', path: '/venue' },
-    { name: 'Timeline', path: '/timeline' },
-    { name: 'FAQ', path: '/faq' },
-    { name: 'Info', path: '/info' },
+    { name: "Home", path: "/" },
+    { name: "RSVP", path: "/rsvp" },
+    { name: "Information", path: "/info" },
+    { name: "Timeline", path: "/timeline" },
+    { name: "FAQ", path: "/faq" },
   ];
 
   return (
@@ -25,8 +24,12 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <Heart className="h-6 w-6 text-primary" />
-            <span className="font-script text-xl text-primary">Joe & Charlie</span>
+            <img
+              src="\images\Monogram-Transparent-No-Circle.svg"
+              alt="Logo"
+              className="h-15 w-15 text-primary"
+            />
+            <span className="font-title text-xl text-primary"></span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,11 +50,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
-            >
+            <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
