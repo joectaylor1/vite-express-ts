@@ -9,70 +9,74 @@ const Timeline = () => {
     {
       time: "7:00 PM",
       title: "Welcome Party",
-      description: "All are welcome to join us for a meal the evening before the big day.",
+      description: "All are welcome to join us for a meal the evening before.",
       location: "Kitchen Garden Cafe, Berkeley Castle",
       icon: <MapPin className="h-5 w-5" />,
     },
   ];
   const SaturdayEvents = [
     {
-      time: "3:30 PM",
+      time: "12:30 PM",
       title: "Guest Arrival",
-      description:
-        "Welcome! Please arrive early to find your seats and enjoy the pre-ceremony atmosphere.",
-      location: "Garden Chapel Entrance",
+      description: "Welcome! Please arrive early to find your seats.",
+      location: "Castle Courtyard",
       icon: <MapPin className="h-5 w-5" />,
     },
     {
-      time: "4:00 PM",
+      time: "1:00 PM",
       title: "Wedding Ceremony",
-      description:
-        "Join us as we exchange vows in the beautiful garden chapel surrounded by vineyard views.",
-      location: "Garden Chapel",
+      description: "Share our joy as we begin the next chapter of our story together.",
+      location: "The Great Hall",
       icon: <Heart className="h-5 w-5" />,
     },
     {
-      time: "4:30 PM",
-      title: "Cocktail Hour",
-      description:
-        "Celebrate with signature cocktails, hors d'oeuvres, and live acoustic music while we take photos.",
-      location: "Terrace Gardens",
-      icon: <Clock className="h-5 w-5" />,
-    },
-    {
-      time: "6:00 PM",
-      title: "Reception Begins",
-      description: "Join us in the grand ballroom for dinner, dancing, and more celebration!",
-      location: "Grand Ballroom",
+      time: "1:30 PM",
+      title: "Drinks and Canapés",
+      description: "Drinks and Canapés will be served at the Lily Pond in the castle gardens.",
+      location: "Lily Pond (The Long Drawing Room in case of bad weather)",
       icon: <Calendar className="h-5 w-5" />,
     },
     {
-      time: "7:00 PM",
-      title: "Dinner Service",
-      description: "A delicious three-course meal prepared by our award-winning culinary team.",
-      location: "Grand Ballroom",
+      time: "2:00 PM",
+      title: "Garden Games",
+      description: "Games will be available all afternoon in the castle grounds.",
+      location: "Castle Grounds",
+      icon: <Calendar className="h-5 w-5" />,
+    },
+    {
+      time: "2:30 PM",
+      title: "Castle Tours",
+      description: "Guided tours of the castle will be available for guests.",
+      location: "Castle Courtyard",
       icon: <Clock className="h-5 w-5" />,
     },
     {
-      time: "8:30 PM",
-      title: "First Dance & Toasts",
+      time: "4:30 PM",
+      title: "Wedding Banquet",
       description:
-        "Our first dance as newlyweds followed by heartfelt toasts from family and friends.",
-      location: "Grand Ballroom",
+        "Join us for a celebratory meal as we share our first meal together as a married couple.",
+      location: "The Great Hall",
+      icon: <Clock className="h-5 w-5" />,
+    },
+    {
+      time: "7:00 PM",
+      title: "First Dance",
+      description: "Please join us on the dancefloor.",
+      location: "The Great Hall",
       icon: <Heart className="h-5 w-5" />,
     },
     {
       time: "9:00 PM",
-      title: "Dancing & Celebration",
-      description: "Let's dance the night away! The dance floor is open until midnight.",
-      location: "Grand Ballroom",
+      title: "Evening Food",
+      description: "Some snacks to keep your energy up, while we are on the dancefloor.",
+      location: "Castle Courtyard",
       icon: <Calendar className="h-5 w-5" />,
     },
     {
-      time: "11:30 PM",
+      time: "Midnight",
       title: "Last Dance",
-      description: "One final dance to close out our perfect wedding day.",
-      location: "Grand Ballroom",
+      description: "One final dance to end the evening.",
+      location: "The Great Hall",
       icon: <Heart className="h-5 w-5" />,
     },
   ];
@@ -162,16 +166,9 @@ const Timeline = () => {
       {/* Additional Information */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-script text-4xl md:text-5xl text-primary mb-8">
-            Additional Information
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Click on the follwing links for additional information on accomadation, dress code,
-            transportation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-row gap-4 justify-center">
             <Link to="/info">
-              <Button variant="elegant">More Information</Button>
+              <Button variant="elegant">Information</Button>
             </Link>
             <Link to="/faq">
               <Button variant="elegant">FAQs</Button>

@@ -12,13 +12,14 @@ All colors MUST be HSL.
     font-style: normal;
     font-weight: normal;
     src:
-      local("BodoniFLF Regular"),
+      local("BodoniFLF"),
       url("/Fonts/BodoniFLF-Roman.woff") format("woff");
   }
   @font-face {
     font-family: "BodoniFLF";
-    src: url("/Fonts/BodoniFLF-Bold.ttf") format("truetype");
+    src: url("/Fonts/BodoniFLF-Bold.woff") format("woff");
     font-style: normal;
+    font-weight: 600;
     font-display: swap;
   }
   @font-face {
@@ -26,6 +27,12 @@ All colors MUST be HSL.
     src: url("/Fonts/BDScript-Bold.woff") format("woff");
     font-weight: bold;
     font-style: italic;
+  }
+  @font-face {
+    font-family: "Glacial";
+    src: url("/Fonts/GlacialIndifference-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
   }
   :root {
     /* Wedding color palette */
@@ -38,7 +45,7 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 342 15% 25%;
 
-    --primary: 340 35% 70%;
+    --primary: 297 22% 80%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 350 25% 95%;
@@ -72,10 +79,8 @@ All colors MUST be HSL.
     --shadow-soft: 0 5px 20px -5px hsl(var(--primary) / 0.1);
 
     /* Typography */
-    --font-serif: "Playfair Display", serif;
+    --font-serif: "BodoniFLF", "Playfair Display", serif;
     --font-script: "BDScript";
-    --font-bdscript: "BDScript";
-    --font-title: "BodoniFLF Regular";
 
     /* Animations */
     --transition-romantic: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -146,6 +151,7 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-family:
+      "Glacial",
       "Inter",
       -apple-system,
       BlinkMacSystemFont,
@@ -157,15 +163,7 @@ All colors MUST be HSL.
   }
 
   .font-script {
-    font-family: var(--font-script2);
-  }
-
-  .font-bdscript {
-    font-family: var(--font-bdscript);
-  }
-
-  .font-title {
-    font-family: var(--font-title);
+    font-family: var(--font-script);
   }
 }
 

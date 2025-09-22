@@ -51,6 +51,7 @@ app.post("/api/v1/attendance-response", async (req: Request, res: Response) => {
       },
     });
 
+    console.log("RSVP Saved:", submission);
     res.status(201).json({ success: true, data: submission });
   } catch (error: unknown) {
     console.error(error);

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, MapPin, Heart, Clock } from "lucide-react";
-import weddingHero from "@/assets/header-image_estate-history.webp";
+import weddingHero from "@/assets/WeddingWebsite2.png";
 
 const Home = () => {
   return (
@@ -17,27 +17,7 @@ const Home = () => {
           <div className="absolute inset-0 bg-black/20"></div>
         </div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <h1 className="font-bdscript font-bold italic text-9xl md:text-8xl mb-6 animate-fade-in">
-            Joe & Charlie
-          </h1>
-          <p className="font-serif text-xl md:text-2xl mb-8 opacity-90">
-            We would be delighted for you to join us on our wedding day
-          </p>
-          <div className="space-y-4 mb-8">
-            <div className="flex items-center justify-center space-x-2 text-lg">
-              <Calendar className="h-5 w-5" />
-              <span>June 13th, 2026</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2 text-lg">
-              <Clock className="h-5 w-5" />
-              <span>1:00 PM</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2 text-lg">
-              <MapPin className="h-5 w-5" />
-              <span>Berkeley Castle, Gloucestershire</span>
-            </div>
-          </div>
+        <div className="relative z-10 mt-80 text-center text-white px-4 max-w-4xl mx-auto">
           <Link to="/rsvp">
             <Button variant="rsvp" size="hero" className="text-xl">
               RSVP Now
@@ -80,9 +60,9 @@ const Home = () => {
                 <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-serif text-xl font-semibold mb-2">RSVP</h3>
                 <p className="text-muted-foreground">Please respond by</p>
-                <p className="text-muted-foreground font-semibold">December 1st, 2025</p>
+                <p className="text-muted-foreground font-semibold">December 13th, 2025</p>
                 <Link to="/rsvp">
-                  <Button variant="romantic" className="mt-4">
+                  <Button variant="rsvp" className="mt-4">
                     Respond Now
                   </Button>
                 </Link>
@@ -99,15 +79,15 @@ const Home = () => {
             Additional Information
           </h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Click on the follwing links for additional information on accomadation, dress code,
-            transportation.
+            Click on the following links for additional information on accommodation, dress code,
+            and transportation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex sm:flex-row gap-4 justify-center">
             <Link to="/timeline">
               <Button variant="elegant">Timeline</Button>
             </Link>
             <Link to="/info">
-              <Button variant="elegant">More Information</Button>
+              <Button variant="elegant">Information</Button>
             </Link>
             <Link to="/faq">
               <Button variant="elegant">FAQs</Button>

@@ -12,9 +12,8 @@ import { Button } from "@/components/ui/button";
 const FAQ = () => {
   const faqs = [
     {
-      question: "What should I wear?",
-      answer:
-        "We're asking for formal attire. We're hoping to spend the afternoon in the grassy areas of the grounds, weather permitting, so please wear appropiate shoes.",
+      question: "When should I RSVP?",
+      answer: "Please RSVP by 13/12/2025.",
     },
     {
       question: "Will the ceremony be indoors or outdoors?",
@@ -26,24 +25,56 @@ const FAQ = () => {
         "Parking is available, please use the castle's main tourist entrance off Canonbury Street. Cars can be left in the car park overnight and collected in the morning.",
     },
     {
-      question: "Can I bring a plus-one?",
-      answer: "",
+      question: "What transport options are available?",
+      answer: (
+        <>
+          Train station - The nearest train station to Berkeley Castle is Cam & Dursley station,
+          which is approximately 6 miles away. From the station, you will need to take a taxi to
+          reach the castle.
+          <br />
+          <br />
+          Airports - The nearest airports are Bristol (45 min drive) and Birmingham (1 hr 20 min
+          drive).
+          <br />
+          <br />
+          Taxis - Taxis must be pre-booked as it is a rural area. See details on 'Information' for
+          local taxi companies.
+          <br />
+          <br />
+          Helicopter - Please invite us if you plan on arriving by helicopter.
+        </>
+      ),
     },
     {
-      question: "Are children welcome?",
-      answer: "",
+      question: 'What does "traditional wedding attire" mean?',
+      answer:
+        "Good question! We want you to look your best. Suits and ties, or mid-long length dresses. As a reminder, it is June and we are hoping to spend the afternoon outside. Please wear shoes suitable for this.",
+    },
+    {
+      question: "Can I bring a plus-one?",
+      answer: "Sorry, all guests are named on the invite.",
+    },
+    {
+      question: "Can I bring children?",
+      answer: "Sorry, all guests are named on the invite.",
     },
     {
       question: "What time should I arrive?",
-      answer: "Please plan to arrive by 12:45 PM. The ceremony will begin promptly at 1:00 PM.",
+      answer: "Please plan to arrive by 12:30 PM. The ceremony will begin promptly at 1:00 PM.",
     },
     {
       question: "Is there accommodation nearby?",
-      answer: "Absolutely! Please see the accomadation section of the website.",
+      answer: "Absolutely! Please see the accommodation section on the information page.",
     },
     {
-      question: "Can I take photos during the ceremony?",
-      answer: "",
+      question: "Can I take pictures throughout the day?",
+      answer:
+        "Yes - we will be sharing a link for all guests to upload any pictures to share with all guests. We would love to see photos of you enjoying the day. However, we ask that during our ceremony that you are focused on sharing the moment with us, and that you have your phones and cameras kept away. We will share our professional photos of the day and ceremony once we receive them.",
+    },
+    {
+      question: "Can I take pictures during the ceremony?",
+      answer:
+        "We ask that during our ceremony that you are focused on sharing the moment with us, and that you have your phones and cameras kept away. We will share our professional photos of the day and ceremony once we receive them.",
     },
     {
       question: "What dietary options will be available?",
@@ -52,16 +83,11 @@ const FAQ = () => {
     },
     {
       question: "How late will the reception go?",
-      answer: "The reception will run until midnight.",
+      answer: "The party ends at midnight. Remember to pre-book your taxi if required.",
     },
     {
       question: "Do you have a gift registry?",
-      answer:
-        "Your presence is the only present we need! If you'd like to give a gift, We'd be grateful for contributions to our honeymoon fund.",
-    },
-    {
-      question: "Who can I contact if I have other questions?",
-      answer: "For any questions not covered here, please feel free to reach out to us directly.",
+      answer: "We are very grateful for any contribution towards our honeymoon.",
     },
   ];
 
@@ -71,9 +97,6 @@ const FAQ = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="font-script text-5xl text-primary mb-4">Frequently Asked Questions</h1>
-          <p className="text-lg text-muted-foreground">
-            Everything you need to know about our special day
-          </p>
         </div>
 
         {/* FAQ Accordion */}
@@ -123,19 +146,12 @@ const FAQ = () => {
       {/* Additional Information */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-script text-4xl md:text-5xl text-primary mb-8">
-            Additional Information
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Click on the follwing links for additional information on accomadation, dress code,
-            transportation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex sm:flex-row gap-4 justify-center">
             <Link to="/timeline">
               <Button variant="elegant">Timeline</Button>
             </Link>
-            <Link to="/faq">
-              <Button variant="elegant">FAQs</Button>
+            <Link to="/info">
+              <Button variant="elegant">Information</Button>
             </Link>
           </div>
         </div>

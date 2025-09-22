@@ -18,7 +18,7 @@ const RSVP = () => {
     email: "",
     phone: "",
     attending: "",
-    dietary_requirements: "",
+    dietry_requirements: "",
     friday_evening_attendance: false,
     sunday_attendance: false,
     comments: "",
@@ -98,7 +98,7 @@ const RSVP = () => {
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="font-script text-5xl text-primary mb-4">RSVP</h1>
-          <p className="text-lg text-muted-foreground">Please respond by December 1st, 2025</p>
+          <p className="text-lg text-muted-foreground">Please respond by December 13th, 2025</p>
         </div>
 
         <Card className="romantic-shadow">
@@ -173,17 +173,14 @@ const RSVP = () => {
                 <>
                   <div className="space-y-4">
                     <h3 className="font-serif text-lg font-semibold text-primary">
-                      Dinner Selection
+                      Dietary Requirements
                     </h3>
 
                     <div>
-                      <Label htmlFor="dietary_requirements">
-                        Dietary Requirements or Allergies
-                      </Label>
                       <Textarea
-                        id="dietary_requirements"
-                        value={formData.dietary_requirements}
-                        onChange={(e) => handleInputChange("dietary_requirements", e.target.value)}
+                        id="dietry_requirements"
+                        value={formData.dietry_requirements}
+                        onChange={(e) => handleInputChange("dietry_requirements", e.target.value)}
                         placeholder="Please let us know of any allergies or special dietary needs..."
                         rows={3}
                       />
@@ -193,12 +190,11 @@ const RSVP = () => {
                   {/* Additional Events */}
                   <div className="space-y-4">
                     <h3 className="font-serif text-lg font-semibold text-primary">
-                      Night Before and Morning After
+                      Welcome Party - Friday Evening
                     </h3>
                     <p className="text-sm text-muted-foreground">
-                      We would love it if you could join us for a meal on the friday evening before
-                      the wedding and brunch the morning after. Please let us know which events
-                      you'll be attending:
+                      We would love it if you could join us for a meal on the Friday evening before
+                      the wedding . Please let us know whether you'll be attending:
                     </p>
 
                     <div className="space-y-3">
@@ -210,18 +206,7 @@ const RSVP = () => {
                             handleInputChange("friday_evening_attendance", checked)
                           }
                         />
-                        <Label htmlFor="friday_evening">Friday Evening Dinner</Label>
-                      </div>
-
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          id="sunday"
-                          checked={formData.sunday_attendance}
-                          onCheckedChange={(checked) =>
-                            handleInputChange("sunday_attendance", checked)
-                          }
-                        />
-                        <Label htmlFor="sunday">Sunday Brunch</Label>
+                        <Label htmlFor="friday_evening">Yes I'll be attending</Label>
                       </div>
                     </div>
                   </div>
