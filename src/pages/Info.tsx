@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { House, Gift, Shirt, Car, MapPin, Heart, Plane } from "lucide-react";
+import { House, Gift, Shirt, Car, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Info = () => {
@@ -35,9 +35,9 @@ const Info = () => {
               <Shirt className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-serif text-xl font-semibold mb-3">Dress Code</h3>
               <p className="text-muted-foreground mb-1">
-                Suitable for outdoor games and a night of dancing
+                Traditional wedding attire. Bright colours encouraged. Please wear something
+                suitable for outdoor games and a night of dancing.
               </p>
-              <p className="text-muted-foreground mb-1">Bright colours encouraged</p>
             </CardContent>
           </Card>
 

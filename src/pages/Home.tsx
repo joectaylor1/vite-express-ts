@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, MapPin, Heart, Clock } from "lucide-react";
+import { Calendar, MapPin, Heart } from "lucide-react";
 import weddingHero from "@/assets/WeddingWebsite2.png";
 
 const Home = () => {
