@@ -1,15 +1,29 @@
 import packageJSON from "../../../package.json";
 import express, { Application } from "express";
 import cors from "cors";
+import rateLimit from "express-rate-limit";
 import { Request, Response } from "express";
 import { PrismaClient } from "../../../generated/prisma/client";
 
 const app: Application = express();
 const prisma = new PrismaClient();
 
-app.use(express.json({ limit: "20mb" }));
-app.use(cors());
+app.use(express.json({ limit: "200kb" }));
+app.use(
+  cors({
+    origin: ["https://wedding.joecharlie.co.uk"],
+    methods: ["GET", "POST"],
+  })
+);
 app.use(express.urlencoded({ extended: true }));
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+app.use(limiter);
 
 // Serve a successful response. For use with wait-on
 app.get("/api/v1/health", (req, res) => {
