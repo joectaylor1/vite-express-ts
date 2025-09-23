@@ -68,7 +68,7 @@ export default {
         sage: "hsl(var(--sage))",
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
+        serif: ["BodoniFLF", "Playfair Display", "serif"],
         script: ["Dancing Script", "cursive"],
       },
       borderRadius: {
